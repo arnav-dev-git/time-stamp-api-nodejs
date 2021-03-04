@@ -4,6 +4,8 @@ import bodyparser from "body-parser";
 
 const app = express();
 
+const PORT = process.env.PORT || 5000;
+
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(cors());
 
@@ -28,6 +30,6 @@ app.get("/api/timestamp/:date", (req, res) => {
   }
 });
 
-app.listen(4000, (req, res) => {
+app.listen(PORT, (req, res) => {
   console.log(`server is running ...`);
 });
