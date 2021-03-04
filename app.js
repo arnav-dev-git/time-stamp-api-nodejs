@@ -31,6 +31,12 @@ app.get("/api/timestamp/:date", (req, res) => {
   }
 });
 
+app.get("/api/timestamp/", (req, res) => {
+  const date = new Date().toUTCString();
+  const unixTimeStamp = new Date().getTime();
+  res.json({ unix: unixTimeStamp, utc: date });
+});
+
 app.listen(PORT, (req, res) => {
   console.log(`server is running ...`);
 });
