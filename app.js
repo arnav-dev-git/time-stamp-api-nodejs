@@ -3,6 +3,7 @@ import cors from "cors";
 import bodyparser from "body-parser";
 
 import timeRouter from "./routes/timeStamp.js";
+import meRouter from "./routes/whoAmI.js";
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(cors());
 
 //middlewares
 app.use("/api/timestamp", timeRouter);
+app.use("/api/whoami", meRouter);
 
 app.get("/", function (req, res) {
   res.json({ message: "Welcome to microservices api !!!" });
